@@ -44,8 +44,8 @@ def balance_team():
         n = 0
         team['team_name'] = constants.TEAMS[n]
         n += 1
-
-#        # 2. assign players to teams
+ 
+    # 2. assign players to teams
     for team in team_list:
         #while len(team['players']) <= (player_per_team/2):
             for players in constants.PLAYERS:
@@ -61,35 +61,10 @@ def balance_team():
     print(constants.PLAYERS)
     print(len(constants.PLAYERS))
             
-
-
-#        while int(len(team['players'])) <= player_per_team:
 clean_data()
 balance_team()       
 # ---------------------------------------------------------------------------------------
-                    
-
-    #team1 = {'team_name':1}
-    #team2 = {'team_name':2}
-    #team3 = {'team_name':3}
-    #for team in constants.TEAMS:
-    #    n = 0
-    #    team_list[n]['team_name'] = team
-    
-    #print(team_list)
-
-
-
-
-        
-
-
-
-
-
-
-
+ 
 # 2. balance_team function: assign same no. of players per team; each team should have same no. of exp. / inexp. player per team, 
-
 
 # 3. Menu: display stats of chosen team, or quit
