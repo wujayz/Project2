@@ -9,7 +9,6 @@ import constants
 teams = copy.deepcopy(constants.TEAMS)
 players = copy.deepcopy(constants.PLAYERS)
 
-
 def clean_data():
     experienced_players = []
     inexperienced_players = []
@@ -18,12 +17,11 @@ def clean_data():
         player['height_2'] = height_int
 
         player['guardians'] = player['guardians'].split(' and ')
-
+        
         if player['experience'] == 'YES':
             player['experience'] = True
         else:
             player['experience'] = False
-
 
 def balance_team():
     player_per_team = int(len(players)/len(teams))
@@ -33,32 +31,29 @@ def balance_team():
     team3 = {'team_name': 3, 'players': []}
 
     team_list = [team1, team2, team3]
-
+    
     n = 0
     for team in team_list:
         team['team_name'] = teams[n]
         n += 1
-        print(team['team_name'])
 
-    for team in team_list:
         for player in players[:]:
             if player['experience'] == True:
                 team['players'].append(player)
                 players.remove(player)
-
+            
             if len(team['players']) == int(player_per_team/2):
                 break
-
-    for team in team_list:
 
         for player in players[:]:
             if player['experience'] == False:
                 team['players'].append(player)
                 players.remove(player)
-
+        
             if len(team['players']) == player_per_team:
                 break
-
+    
+            
 
 clean_data()
 balance_team()
