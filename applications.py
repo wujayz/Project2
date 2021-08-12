@@ -102,58 +102,53 @@ def display_stats(a):
     exp_inexp()
     guardians()
 
-
-clean_data()
-balance_team()
-
-print("Welcome to the Basketball Stats Tool. \n")
-while True:
-    try:
-        print("What would you like to do? \n\n 1. Display Team Stats \n 2. Quit \n")
-        action_choice = int(input("Enter either 1 or 2: "))
-        if action_choice == 1:
-            print("-"*200)
-            print("Which team's stats would you like? \n\n 1. Panthers \n 2. Bandits \n 3. Warriors \n")
-            while True:
-                try:
-                    n = int(input("Enter 1, 2 or 3: "))
-                    
-                    if n == 1:
-                        print("-"*200)
-                        print(team1['team_name'], "\n")
-                        display_stats(1)
-                        print("-"*200)
-                        break
-
-                    elif n == 2:
-                        print("-"*100)
-                        print(team2['team_name'], "\n")
-                        display_stats(2)
-                        print("-"*200)
-                        break
-
-                    elif n == 3:
-                        print("-"*100)
-                        print(team3['team_name'], "\n")
-                        display_stats(3)
-                        print("-"*200)
-                        break
-
-                except ValueError:
-                    print("You have entered an invalid option. Please try again. ")
-        
-        if action_choice == 2:
-            quit()
-
-    except ValueError:
-        print("You have entered an invalid option.")
-
-
             
-#if __name__ == "__main__":
-#   clean_data()
-#    balance_team()
+if __name__ == "__main__":
 
-#    print("Welcome to the Basketball Stats Tool. \nWhat would you like to do? \n\n 1. Display Team Stats \n 2. Quit \n")
+    clean_data()
+    balance_team()
+
+    print("Welcome to the Basketball Stats Tool. \n")
+    while True:
+        try:
+            print("What would you like to do? \n\n 1. Display Team Stats \n 2. Quit \n")
+            action_choice = int(input("Enter either 1 or 2: "))
+            if action_choice == 1:
+                print("-"*200)
+                print(
+                    "Which team's stats would you like? \n\n 1. Panthers \n 2. Bandits \n 3. Warriors \n")
+                while True:
+                    try:
+                        n = int(input("Enter 1, 2 or 3: "))
+
+                        if n == 1:
+                            print("-"*200)
+                            print(team1['team_name'], "\n")
+                            display_stats(1)
+                            print("-"*200)
+                            break
+
+                        elif n == 2:
+                            print("-"*100)
+                            print(team2['team_name'], "\n")
+                            display_stats(2)
+                            print("-"*200)
+                            break
+
+                        elif n == 3:
+                            print("-"*100)
+                            print(team3['team_name'], "\n")
+                            display_stats(3)
+                            print("-"*200)
+                            break
+
+                    except ValueError:
+                        print("You have entered an invalid option. Please try again. ")
+
+            if action_choice == 2:
+                quit()
+
+        except ValueError:
+            print("You have entered an invalid option.")
 
 # add functions that you do not want it to run on other files that import applications.py
